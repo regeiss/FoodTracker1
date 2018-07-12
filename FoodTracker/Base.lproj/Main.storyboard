@@ -65,8 +65,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="JHV-lf-MKN">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gYQ-cB-haB"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2Wa-pR-FAW"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gYQ-cB-haB">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="aGG-vD-oPg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2Wa-pR-FAW">
+                            <connections>
+                                <segue destination="9Kv-XF-IAN" kind="unwind" unwindAction="unwindToMealListWithSender:" id="zID-Vy-xIu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mealNameLabel" destination="8wv-MV-J7n" id="KSk-jN-esF"/>
@@ -77,6 +85,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="9Kv-XF-IAN" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="NeM-KN-8Um">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="Ya5-bl-eTi"/>
